@@ -11,12 +11,7 @@ ui <- fluidPage(theme = bs_theme(
   heading_font = font_google("Bebas Neue") #Otha fonts
 ),
   navlistPanel(id = "tabset",
-               "Harrison Fringer",
-               tabPanel("About Me", fluidRow(
-                                            column(4,tags$img(src = "dude.jpg", style = "width: 100%; height: auto;")),
-                                             column(8,p("I am a current NC State University PhD Student studying Statistics. I finished my undergraduate degree in 2025 and participated in undergraduate research."),
-                                                    p("In my free time, I enjoy working on animation projects, as well as cooking and gardening.")))),
-               
+               "Regression Exploration",
                tabPanel("Personal Interests", "Prior Experience", p("In my undergraduate years, I spent around a semester working on a project that focused on data simulation. This was later expected to extend to a themed setting (i.e. healthcare outcomes), where the primary goal was to explore different assumptions involved in linear regression. Originally coded in SAS, the simulation setup has been transformed into an interactive shiny app!"), p("To view the work on this project, please click on the following tab labelled 'Clinical Simulation (LR Analysis)'.")),
                
                tabPanel("LR Experiment", "Clinical Studies", 
