@@ -101,7 +101,7 @@ output$fewobs = renderTable(head(ClinVars()))
 output$ModRSquare = renderText(summary(lm(Wealth ~ Age + Height + BMI, data = ClinVars()))$r.squared)
 output$ModelPicked = renderText(paste0("Selected Model: ",input$pred1,"+",input$pred2,"+",input$pred3))
 output$UserRSquare = renderText(paste0("Model R-Square: ",summary(lm(usermod(), data = ClinVars()))$r.squared))
-output$plot1 = renderPlot({ggplot(data = ClinVars(), aes(x = .data[[input$xax]], y = Wealth)) +
+output$plot1 = renderPlot({ggplot(data = vals$dat, aes(x = .data[[input$xax]], y = Wealth)) +
     geom_point() +
     geom_abline(intercept = summary(modelSum())$coefficients[1,1], slope = summary(modelSum())$coefficients[2,1])
   })
@@ -113,3 +113,4 @@ output$plot2 = renderPlot({ggplot(testMod(), aes(x = .fitted, y = .resid)) +
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
